@@ -87,7 +87,7 @@ fun AdBanner(modifier: Modifier = Modifier) {
     AndroidView(
         modifier = modifier
             .fillMaxWidth()
-            .height(56dp),
+            .height(56.dp),
         factory = { ctx ->
             FrameLayout(ctx).apply {
                 val adView = AdView(ctx).apply {
@@ -109,24 +109,24 @@ fun NativeAdPlaceholder(modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16dp))
+            .clip(RoundedCornerShape(16.dp))
             .border(
                 1.dp,
                 Brush.linearGradient(listOf(Color(0xFF6366F1), Color(0xFF00F2FE))),
-                RoundedCornerShape(16dp)
+                RoundedCornerShape(16.dp)
             ),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
     ) {
         Row(
             modifier = Modifier
-                .padding(16dp)
+                .padding(16.dp)
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
                 modifier = Modifier
-                    .size(48dp)
-                    .clip(RoundedCornerShape(12dp))
+                    .size(48.dp)
+                    .clip(RoundedCornerShape(12.dp))
                     .background(Brush.linearGradient(listOf(Color(0xFF6366F1), Color(0xFF00F2FE)))),
                 contentAlignment = Alignment.Center
             ) {
@@ -137,7 +137,7 @@ fun NativeAdPlaceholder(modifier: Modifier = Modifier) {
                 )
             }
             
-            Spacer(modifier = Modifier.width(16dp))
+            Spacer(modifier = Modifier.width(16.dp))
 
             Column(modifier = Modifier.weight(1f)) {
                 Row(
