@@ -54,39 +54,39 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core-ktx)
-    implementation(libs.androidx.lifecycle-runtime-ktx)
-    implementation(libs.androidx.lifecycle-viewmodel-compose)
-    implementation(libs.androidx.activity-compose)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.activity.compose)
 
     // Compose
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
-    implementation(libs.compose.ui-graphics)
-    implementation(libs.compose.ui-tooling-preview)
+    implementation(libs.compose.ui.graphics)
+    implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
-    implementation(libs.compose.material-icons-extended)
-    debugImplementation(libs.compose.ui-tooling)
+    implementation(libs.compose.material.icons.extended)
+    debugImplementation(libs.compose.ui.tooling)
 
     // Navigation
-    implementation(libs.navigation-compose)
+    implementation(libs.navigation.compose)
 
     // Dependency Injection (Hilt)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-    implementation(libs.hilt.navigation-compose)
+    implementation(libs.hilt.navigation.compose)
 
     // Local Storage (DataStore)
-    implementation(libs.datastore-preferences)
+    implementation(libs.datastore.preferences)
 
     // Serialization
     implementation(libs.kotlinx.serialization-json)
 
     // AdMob
-    implementation(libs.play-services-ads)
+    implementation(libs.play.services.ads)
 
     // QR & Barcode Scanning
-    implementation(libs.mlkit-barcode-scanning)
+    implementation(libs.mlkit.barcode.scanning)
     implementation(libs.camera.core)
     implementation(libs.camera.camera2)
     implementation(libs.camera.lifecycle)
@@ -94,7 +94,7 @@ dependencies {
     implementation(libs.zxing.core)
 
     // Image loading
-    implementation(libs.coil-compose)
+    implementation(libs.coil.compose)
 
     // Local Tests
     testImplementation("junit:junit:4.13.2")
