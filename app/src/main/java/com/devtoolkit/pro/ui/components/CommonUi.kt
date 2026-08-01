@@ -7,6 +7,7 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
@@ -326,7 +327,7 @@ fun CustomMarkdown(
                 }
                 trimmedLine.startsWith("- ") || trimmedLine.startsWith("* ") -> {
                     Row(
-                        modifier = Modifier.padding(start = 8.dp, vertical = 2.dp),
+                        modifier = Modifier.padding(start = 8.dp, top = 2.dp, bottom = 2.dp),
                         verticalAlignment = Alignment.Top
                     ) {
                         Text(
