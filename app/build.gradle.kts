@@ -53,6 +53,12 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("com.google.guava:listenablefuture:1.0")
+    }
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
