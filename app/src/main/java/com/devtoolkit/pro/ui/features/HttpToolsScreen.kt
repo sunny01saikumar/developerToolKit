@@ -76,7 +76,7 @@ fun HttpStatusScreen(
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
         ) {
-            Column(modifier = Modifier.padding(horizontal = 16dp)) {
+            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
                 SearchBar(query = searchQuery, onQueryChange = { searchQuery = it }, placeholder = "Search by code or status...")
                 ScrollableTabRow(
                     selectedTabIndex = categories.indexOf(selectedCategory).coerceAtLeast(0),
@@ -90,7 +90,7 @@ fun HttpStatusScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             if (filtered.isEmpty()) {
                 Box(modifier = Modifier.fillMaxSize().weight(1f), contentAlignment = Alignment.Center) {
@@ -99,8 +99,8 @@ fun HttpStatusScreen(
             } else {
                 LazyColumn(
                     modifier = Modifier.fillMaxWidth().weight(1f),
-                    contentPadding = PaddingValues(horizontal = 16dp, vertical = 8dp),
-                    verticalArrangement = Arrangement.spacedBy(12dp)
+                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(filtered) { item ->
                         StatusCardItem(item = item, context = context)
@@ -114,7 +114,7 @@ fun HttpStatusScreen(
 @Composable
 fun StatusCardItem(item: HttpStatusItem, context: Context) {
     Card(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -127,7 +127,7 @@ fun StatusCardItem(item: HttpStatusItem, context: Context) {
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.primary
                     )
-                    Spacer(modifier = Modifier.width(12dp))
+                    Spacer(modifier = Modifier.width(12.dp))
                     Text(
                         text = item.name,
                         fontWeight = FontWeight.Bold,
@@ -147,31 +147,31 @@ fun StatusCardItem(item: HttpStatusItem, context: Context) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Text(text = item.description, style = MaterialTheme.typography.bodyMedium)
             
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             // Raw response example
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(8dp))
+                    .clip(RoundedCornerShape(8.dp))
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
-                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.1f), RoundedCornerShape(8dp))
+                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
                     .clickable {
                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText("http", item.example))
                         Toast.makeText(context, "Copied response", Toast.LENGTH_SHORT).show()
                     }
-                    .padding(12dp)
+                    .padding(12.dp)
             ) {
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     Column(modifier = Modifier.weight(1f)) {
                         Text("Example Header Response:", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
                         Text(text = item.example, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodySmall)
                     }
-                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16dp), tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
+                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
                 }
             }
         }
@@ -219,7 +219,7 @@ fun HttpHeadersScreen(
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
         ) {
-            Column(modifier = Modifier.padding(horizontal = 16dp)) {
+            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
                 SearchBar(query = searchQuery, onQueryChange = { searchQuery = it }, placeholder = "Search headers...")
                 ScrollableTabRow(
                     selectedTabIndex = categories.indexOf(selectedCategory).coerceAtLeast(0),
@@ -233,7 +233,7 @@ fun HttpHeadersScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             if (filtered.isEmpty()) {
                 Box(modifier = Modifier.fillMaxSize().weight(1f), contentAlignment = Alignment.Center) {
@@ -242,8 +242,8 @@ fun HttpHeadersScreen(
             } else {
                 LazyColumn(
                     modifier = Modifier.fillMaxWidth().weight(1f),
-                    contentPadding = PaddingValues(horizontal = 16dp, vertical = 8dp),
-                    verticalArrangement = Arrangement.spacedBy(12dp)
+                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(filtered) { item ->
                         HeaderCardItem(item = item, context = context)
@@ -257,7 +257,7 @@ fun HttpHeadersScreen(
 @Composable
 fun HeaderCardItem(item: HttpHeaderItem, context: Context) {
     Card(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -273,30 +273,30 @@ fun HeaderCardItem(item: HttpHeaderItem, context: Context) {
                     Text(item.category, modifier = Modifier.padding(horizontal = 4.dp))
                 }
             }
-            Spacer(modifier = Modifier.height(6dp))
+            Spacer(modifier = Modifier.height(6.dp))
             Text(text = item.description, style = MaterialTheme.typography.bodyMedium)
             
-            Spacer(modifier = Modifier.height(10dp))
+            Spacer(modifier = Modifier.height(10.dp))
             
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(8dp))
+                    .clip(RoundedCornerShape(8.dp))
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
-                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.1f), RoundedCornerShape(8dp))
+                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
                     .clickable {
                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText("header_val", item.example))
                         Toast.makeText(context, "Copied example", Toast.LENGTH_SHORT).show()
                     }
-                    .padding(12dp)
+                    .padding(12.dp)
             ) {
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     Column {
                         Text("Example Syntax:", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
                         Text(text = item.example, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodySmall)
                     }
-                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16dp), tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
+                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
                 }
             }
         }
@@ -373,13 +373,13 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             // Method selection
             Text("HTTP Method", fontWeight = FontWeight.Bold)
             Row(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 8dp),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 methods.forEach { m ->
                     FilterChip(
@@ -391,7 +391,7 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             // URL Input
             OutlinedTextField(
@@ -399,10 +399,10 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                 onValueChange = { url = it },
                 label = { Text("Request URL") },
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12dp)
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             // Custom Headers List
             Row(
@@ -418,8 +418,8 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
 
             headersList.forEachIndexed { index, pair ->
                 Row(
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 4dp),
-                    horizontalArrangement = Arrangement.spacedBy(8dp),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     var keyState by remember { mutableStateOf(pair.first) }
@@ -433,7 +433,7 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                         },
                         placeholder = { Text("Key") },
                         modifier = Modifier.weight(1f),
-                        shape = RoundedCornerShape(8dp),
+                        shape = RoundedCornerShape(8.dp),
                         singleLine = true
                     )
 
@@ -445,7 +445,7 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                         },
                         placeholder = { Text("Value") },
                         modifier = Modifier.weight(1f),
-                        shape = RoundedCornerShape(8dp),
+                        shape = RoundedCornerShape(8.dp),
                         singleLine = true
                     )
 
@@ -455,13 +455,13 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             // Authorization Settings
             Text("Authorization", fontWeight = FontWeight.Bold)
             Row(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 8dp),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 authTypes.forEach { type ->
                     FilterChip(
@@ -478,25 +478,25 @@ fun CurlGeneratorScreen(onBackClick: () -> Unit) {
                     value = authValue,
                     onValueChange = { authValue = it },
                     label = { Text(if (authType == "Bearer Token") "Token" else "Username:Password / Encoded Base64") },
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 12dp),
-                    shape = RoundedCornerShape(8dp)
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                    shape = RoundedCornerShape(8.dp)
                 )
             }
 
             // Body payload for POST/PUT
             if (method == "POST" || method == "PUT") {
-                Spacer(modifier = Modifier.height(12dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Text("Body Payload", fontWeight = FontWeight.Bold)
                 OutlinedTextField(
                     value = body,
                     onValueChange = { body = it },
                     placeholder = { Text("JSON body, Form Data, etc.") },
-                    modifier = Modifier.fillMaxWidth().height(120dp).padding(vertical = 8dp),
-                    shape = RoundedCornerShape(12dp)
+                    modifier = Modifier.fillMaxWidth().height(120.dp).padding(vertical = 8.dp),
+                    shape = RoundedCornerShape(12.dp)
                 )
             }
 
-            Spacer(modifier = Modifier.height(20dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // CodeViewer result
             CodeViewer(code = outputCurl, title = "Generated Curl Command")

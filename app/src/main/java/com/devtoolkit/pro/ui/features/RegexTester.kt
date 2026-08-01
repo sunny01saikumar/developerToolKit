@@ -88,14 +88,14 @@ fun RegexTesterScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = regexInput,
                 onValueChange = { regexInput = it },
                 label = { Text("Regular Expression Pattern") },
-                modifier = Modifier.fillMaxWidth().padding(bottom = 12dp),
-                shape = RoundedCornerShape(12dp),
+                modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                shape = RoundedCornerShape(12.dp),
                 singleLine = true
             )
 
@@ -105,31 +105,31 @@ fun RegexTesterScreen(onBackClick: () -> Unit) {
                 label = { Text("Sample Test Text") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(130dp)
-                    .padding(bottom = 12dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(130.dp)
+                    .padding(bottom = 12.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
             if (errorMsg.isNotEmpty()) {
                 Card(
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer),
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 16dp)
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
                 ) {
                     Row(
-                        modifier = Modifier.padding(12dp),
+                        modifier = Modifier.padding(12.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(Icons.Default.Warning, contentDescription = null, tint = MaterialTheme.colorScheme.error)
-                        Spacer(modifier = Modifier.width(10dp))
+                        Spacer(modifier = Modifier.width(10.dp))
                         Text(text = errorMsg, color = MaterialTheme.colorScheme.onErrorContainer)
                     }
                 }
             } else {
                 Card(
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 16dp)
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
                 ) {
                     Row(
-                        modifier = Modifier.padding(16dp),
+                        modifier = Modifier.padding(16.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -147,17 +147,17 @@ fun RegexTesterScreen(onBackClick: () -> Unit) {
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 8dp)
+                modifier = Modifier.padding(bottom = 8.dp)
             )
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .heightIn(min = 100dp)
-                    .clip(RoundedCornerShape(12dp))
+                    .heightIn(min = 100.dp)
+                    .clip(RoundedCornerShape(12.dp))
                     .background(MaterialTheme.colorScheme.surfaceVariant)
-                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), RoundedCornerShape(12dp))
-                    .padding(12dp)
+                    .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
+                    .padding(12.dp)
             ) {
                 Text(
                     text = highlightedText,
@@ -166,24 +166,24 @@ fun RegexTesterScreen(onBackClick: () -> Unit) {
             }
 
             if (matchesList.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(16dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = "Matched Items",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(bottom = 8dp)
+                    modifier = Modifier.padding(bottom = 8.dp)
                 )
 
                 Card(
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Column(modifier = Modifier.padding(8dp)) {
+                    Column(modifier = Modifier.padding(8.dp)) {
                         matchesList.forEachIndexed { index, match ->
                             Text(
                                 text = "${index + 1}:  $match",
                                 fontFamily = FontFamily.Monospace,
-                                modifier = Modifier.padding(vertical = 4dp, horizontal = 8dp),
+                                modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp),
                                 color = MaterialTheme.colorScheme.onSurface
                             )
                             if (index < matchesList.lastIndex) {

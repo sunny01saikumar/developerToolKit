@@ -109,9 +109,9 @@ fun NotesScreen(
             } else {
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
-                    contentPadding = PaddingValues(16dp),
-                    horizontalArrangement = Arrangement.spacedBy(12dp),
-                    verticalArrangement = Arrangement.spacedBy(12dp),
+                    contentPadding = PaddingValues(16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
                     modifier = Modifier.fillMaxSize()
                 ) {
                     items(notes) { note ->
@@ -140,16 +140,16 @@ fun NotesScreen(
                         value = titleInput,
                         onValueChange = { titleInput = it },
                         label = { Text("Title") },
-                        modifier = Modifier.fillMaxWidth().padding(bottom = 8dp),
-                        shape = RoundedCornerShape(8dp),
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
+                        shape = RoundedCornerShape(8.dp),
                         singleLine = true
                     )
                     OutlinedTextField(
                         value = contentInput,
                         onValueChange = { contentInput = it },
                         label = { Text("Content") },
-                        modifier = Modifier.fillMaxWidth().height(160dp),
-                        shape = RoundedCornerShape(8dp)
+                        modifier = Modifier.fillMaxWidth().height(160.dp),
+                        shape = RoundedCornerShape(8.dp)
                     )
                 }
             },
@@ -198,7 +198,7 @@ fun NoteCardItem(
             .fillMaxWidth()
             .clickable { onClick() }
     ) {
-        Column(modifier = Modifier.padding(12dp)) {
+        Column(modifier = Modifier.padding(12.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -212,17 +212,17 @@ fun NoteCardItem(
                     maxLines = 1,
                     modifier = Modifier.weight(1f)
                 )
-                IconButton(onClick = onDelete, modifier = Modifier.size(24dp)) {
+                IconButton(onClick = onDelete, modifier = Modifier.size(24.dp)) {
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = "Delete",
                         tint = MaterialTheme.colorScheme.error,
-                        modifier = Modifier.size(16dp)
+                        modifier = Modifier.size(16.dp)
                     )
                 }
             }
             
-            Spacer(modifier = Modifier.height(6dp))
+            Spacer(modifier = Modifier.height(6.dp))
             
             Text(
                 text = note.content,
@@ -231,7 +231,7 @@ fun NoteCardItem(
                 maxLines = 3
             )
             
-            Spacer(modifier = Modifier.height(10dp))
+            Spacer(modifier = Modifier.height(10.dp))
             
             Text(
                 text = dateStr,

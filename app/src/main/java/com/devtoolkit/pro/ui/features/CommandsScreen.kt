@@ -82,14 +82,14 @@ fun CommandsScreen(
                 .background(MaterialTheme.colorScheme.background)
         ) {
             // Search Bar & Categories
-            Column(modifier = Modifier.padding(horizontal = 16dp)) {
+            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
                 SearchBar(
                     query = searchQuery,
                     onQueryChange = { searchQuery = it },
                     placeholder = "Search commands..."
                 )
 
-                Spacer(modifier = Modifier.height(4dp))
+                Spacer(modifier = Modifier.height(4.dp))
 
                 ScrollableTabRow(
                     selectedTabIndex = categories.indexOf(selectedCategory).coerceAtLeast(0),
@@ -107,7 +107,7 @@ fun CommandsScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             // Commands List
             if (filteredCommands.isEmpty()) {
@@ -125,8 +125,8 @@ fun CommandsScreen(
             } else {
                 LazyColumn(
                     modifier = Modifier.fillMaxWidth().weight(1f),
-                    contentPadding = PaddingValues(horizontal = 16dp, vertical = 8dp),
-                    verticalArrangement = Arrangement.spacedBy(12dp)
+                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(filteredCommands) { cmd ->
                         CommandCardItem(cmd = cmd, context = context)
@@ -142,7 +142,7 @@ fun CommandCardItem(cmd: CommandItem, context: Context) {
     Card(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Column(modifier = Modifier.padding(16dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -156,9 +156,9 @@ fun CommandCardItem(cmd: CommandItem, context: Context) {
                     color = MaterialTheme.colorScheme.primary,
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier
-                        .clip(RoundedCornerShape(6dp))
+                        .clip(RoundedCornerShape(6.dp))
                         .background(MaterialTheme.colorScheme.surfaceVariant)
-                        .padding(horizontal = 8dp, vertical = 4dp)
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
                 )
 
                 IconButton(
@@ -167,18 +167,18 @@ fun CommandCardItem(cmd: CommandItem, context: Context) {
                         clipboard.setPrimaryClip(ClipData.newPlainText("cmd", cmd.command))
                         Toast.makeText(context, "Command copied", Toast.LENGTH_SHORT).show()
                     },
-                    modifier = Modifier.size(32dp)
+                    modifier = Modifier.size(32.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Default.ContentCopy,
                         contentDescription = "Copy command",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.size(18dp)
+                        modifier = Modifier.size(18.dp)
                     )
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             // Description
             Text(
@@ -187,25 +187,25 @@ fun CommandCardItem(cmd: CommandItem, context: Context) {
                 color = MaterialTheme.colorScheme.onSurface
             )
 
-            Spacer(modifier = Modifier.height(10dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             // Example block
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(8dp))
+                    .clip(RoundedCornerShape(8.dp))
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     .border(
                         1.dp,
                         MaterialTheme.colorScheme.outline.copy(alpha = 0.1f),
-                        RoundedCornerShape(8dp)
+                        RoundedCornerShape(8.dp)
                     )
                     .clickable {
                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText("example", cmd.example))
                         Toast.makeText(context, "Example copied", Toast.LENGTH_SHORT).show()
                     }
-                    .padding(12dp)
+                    .padding(12.dp)
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -229,7 +229,7 @@ fun CommandCardItem(cmd: CommandItem, context: Context) {
                         imageVector = Icons.Default.ContentCopy,
                         contentDescription = "Copy example",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
-                        modifier = Modifier.size(16dp)
+                        modifier = Modifier.size(16.dp)
                     )
                 }
             }

@@ -65,7 +65,7 @@ fun SettingsScreen(
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             // Appearance Header
             Text(
@@ -73,21 +73,21 @@ fun SettingsScreen(
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 12dp)
+                modifier = Modifier.padding(bottom = 12.dp)
             )
 
             // Theme Mode Card
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 12dp),
-                shape = RoundedCornerShape(12dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                shape = RoundedCornerShape(12.dp)
             ) {
-                Column(modifier = Modifier.padding(16dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = "Theme Mode",
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold
                     )
-                    Spacer(modifier = Modifier.height(8dp))
+                    Spacer(modifier = Modifier.height(8.dp))
                     
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -111,13 +111,13 @@ fun SettingsScreen(
 
             // Dynamic Color Toggle Card
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 24dp),
-                shape = RoundedCornerShape(12dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp),
+                shape = RoundedCornerShape(12.dp)
             ) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16dp),
+                        .padding(16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -146,7 +146,7 @@ fun SettingsScreen(
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 12dp)
+                modifier = Modifier.padding(bottom = 12.dp)
             )
 
             // Options List
@@ -172,8 +172,8 @@ fun SettingsScreen(
             )
 
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 24dp),
-                shape = RoundedCornerShape(12dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp),
+                shape = RoundedCornerShape(12.dp)
             ) {
                 Column {
                     options.forEachIndexed { index, item ->
@@ -181,16 +181,16 @@ fun SettingsScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clickable { item.onClick() }
-                                .padding(16dp),
+                                .padding(16.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Icon(
                                 imageVector = item.icon,
                                 contentDescription = null,
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.size(24dp)
+                                modifier = Modifier.size(24.dp)
                             )
-                            Spacer(modifier = Modifier.width(16dp))
+                            Spacer(modifier = Modifier.width(16.dp))
                             Text(
                                 text = item.title,
                                 style = MaterialTheme.typography.bodyLarge,
@@ -219,7 +219,7 @@ fun SettingsScreen(
             text = {
                 Column {
                     Text("Version 1.0.0", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                    Spacer(modifier = Modifier.height(8dp))
+                    Spacer(modifier = Modifier.height(8.dp))
                     Text("DevToolkit Pro is a completely offline collection of essential tools designed for developers, architects, and designers. It operates 100% on device, securing your data locally with zero network logging.")
                 }
             },
@@ -236,7 +236,7 @@ fun SettingsScreen(
             onDismissRequest = { showPrivacyDialog = false },
             title = { Text("Privacy Policy", fontWeight = FontWeight.Bold) },
             text = {
-                Box(modifier = Modifier.heightIn(max = 300dp).verticalScroll(rememberScrollState())) {
+                Box(modifier = Modifier.heightIn(max = 300.dp).verticalScroll(rememberScrollState())) {
                     Text("DevToolkit Pro respects your privacy. The application runs entirely offline. We do not gather, store, sync, or transmit any user data, JSON text, tokens, queries, or logs. Bookmarks, history, and notes are saved locally in the secure Jetpack Preferences DataStore on your device. The AdMob SDK serves advertising locally, complying with standard data collection profiles.")
                 }
             },
@@ -253,7 +253,7 @@ fun SettingsScreen(
             onDismissRequest = { showTermsDialog = false },
             title = { Text("Terms of Service", fontWeight = FontWeight.Bold) },
             text = {
-                Box(modifier = Modifier.heightIn(max = 300dp).verticalScroll(rememberScrollState())) {
+                Box(modifier = Modifier.heightIn(max = 300.dp).verticalScroll(rememberScrollState())) {
                     Text("By installing and accessing DevToolkit Pro, you agree that this utility is provided 'as-is' without warranty of any kind. You are solely responsible for verifying the correctness of outputs, token decodes, formatting operations, and calculations. The offline tool operates on-device; no data is backed up to remote cloud environments, and uninstalling the application will delete your bookmarks, history, and notes permanently.")
                 }
             },

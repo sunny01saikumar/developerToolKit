@@ -128,7 +128,7 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -136,16 +136,16 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                 label = { Text("Enter raw JSON") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(180dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(180.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             // Action row
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
                     onClick = {
@@ -156,7 +156,7 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.AutoAwesome, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text("Pretty", maxLines = 1)
                 }
 
@@ -169,7 +169,7 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.Compress, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text("Minify", maxLines = 1)
                 }
 
@@ -181,13 +181,13 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
                 ) {
                     Icon(Icons.Default.CheckCircle, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text("Validate", maxLines = 1)
                 }
             }
 
             if (validationResult.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(12dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Card(
                     colors = CardDefaults.cardColors(
                         containerColor = if (validationResult.startsWith("Valid")) 
@@ -197,13 +197,13 @@ fun JsonFormatterScreen(onBackClick: () -> Unit) {
                 ) {
                     Text(
                         text = validationResult,
-                        modifier = Modifier.padding(12dp),
+                        modifier = Modifier.padding(12.dp),
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
             }
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             CodeViewer(code = output, title = "Formatted Output")
         }
@@ -235,7 +235,7 @@ fun SqlFormatterScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -243,16 +243,16 @@ fun SqlFormatterScreen(onBackClick: () -> Unit) {
                 label = { Text("Enter raw SQL query") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(180dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(180.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             // Action row
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Button(
                     onClick = {
@@ -261,7 +261,7 @@ fun SqlFormatterScreen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.AutoAwesome, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text("Beautify")
                 }
 
@@ -272,12 +272,12 @@ fun SqlFormatterScreen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.Compress, contentDescription = null)
-                    Spacer(modifier = Modifier.width(4dp))
+                    Spacer(modifier = Modifier.width(4.dp))
                     Text("Minify")
                 }
             }
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             CodeViewer(code = output, title = "Formatted SQL Output")
         }

@@ -119,13 +119,13 @@ fun UnixTimestampScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             // Live clock Card
-            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 24dp)) {
-                Column(modifier = Modifier.padding(16dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp)) {
+                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                     Text("Current Epoch Timestamp", style = MaterialTheme.typography.bodyMedium)
-                    Spacer(modifier = Modifier.height(6dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = currentEpoch.toString(),
                         style = MaterialTheme.typography.displayLarge,
@@ -133,14 +133,14 @@ fun UnixTimestampScreen(onBackClick: () -> Unit) {
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.ExtraBold
                     )
-                    Spacer(modifier = Modifier.height(10dp))
+                    Spacer(modifier = Modifier.height(10.dp))
                     Button(onClick = {
                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText("epoch", currentEpoch.toString()))
                         Toast.makeText(context, "Copied timestamp", Toast.LENGTH_SHORT).show()
                     }) {
                         Icon(Icons.Default.ContentCopy, contentDescription = null)
-                        Spacer(modifier = Modifier.width(6dp))
+                        Spacer(modifier = Modifier.width(6.dp))
                         Text("Copy Current Timestamp")
                     }
                 }
@@ -148,17 +148,17 @@ fun UnixTimestampScreen(onBackClick: () -> Unit) {
 
             // Timestamp -> Date
             Text("Epoch -> Date", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            Card(modifier = Modifier.fillMaxWidth().padding(vertical = 8dp)) {
-                Column(modifier = Modifier.padding(16dp)) {
+            Card(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     OutlinedTextField(
                         value = tsInput,
                         onValueChange = { tsInput = it },
                         label = { Text("Epoch Timestamp (seconds)") },
                         modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(8dp),
+                        shape = RoundedCornerShape(8.dp),
                         singleLine = true
                     )
-                    Spacer(modifier = Modifier.height(12dp))
+                    Spacer(modifier = Modifier.height(12.dp))
                     Button(onClick = {
                         tsOutputDate = try {
                             val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss UTC", Locale.getDefault()).apply {
@@ -172,27 +172,27 @@ fun UnixTimestampScreen(onBackClick: () -> Unit) {
                         Text("Convert to Date")
                     }
                     if (tsOutputDate.isNotEmpty()) {
-                        Spacer(modifier = Modifier.height(12dp))
+                        Spacer(modifier = Modifier.height(12.dp))
                         CodeViewer(code = tsOutputDate, title = "UTC Datetime")
                     }
                 }
             }
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             // Date -> Timestamp
             Text("Date -> Epoch", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            Card(modifier = Modifier.fillMaxWidth().padding(vertical = 8dp)) {
-                Column(modifier = Modifier.padding(16dp)) {
+            Card(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     OutlinedTextField(
                         value = dateInput,
                         onValueChange = { dateInput = it },
                         label = { Text("Date String (yyyy-MM-dd HH:mm:ss)") },
                         modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(8dp),
+                        shape = RoundedCornerShape(8.dp),
                         singleLine = true
                     )
-                    Spacer(modifier = Modifier.height(12dp))
+                    Spacer(modifier = Modifier.height(12.dp))
                     Button(onClick = {
                         dateOutputTs = try {
                             val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
@@ -205,7 +205,7 @@ fun UnixTimestampScreen(onBackClick: () -> Unit) {
                         Text("Convert to Timestamp")
                     }
                     if (dateOutputTs.isNotEmpty()) {
-                        Spacer(modifier = Modifier.height(12dp))
+                        Spacer(modifier = Modifier.height(12.dp))
                         CodeViewer(code = dateOutputTs, title = "Unix Timestamp")
                     }
                 }
@@ -271,13 +271,13 @@ fun DevCalculatorScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             // Base input selection
             Text("Input Base", fontWeight = FontWeight.Bold)
             Row(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 8dp),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 bases.forEach { b ->
                     FilterChip(
@@ -289,29 +289,29 @@ fun DevCalculatorScreen(onBackClick: () -> Unit) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             OutlinedTextField(
                 value = inputVal,
                 onValueChange = { inputVal = it },
                 label = { Text("Enter value") },
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12dp),
+                shape = RoundedCornerShape(12.dp),
                 singleLine = true
             )
 
             if (errorMsg.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(12dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)) {
-                    Text(errorMsg, modifier = Modifier.padding(12dp), color = MaterialTheme.colorScheme.onErrorContainer)
+                    Text(errorMsg, modifier = Modifier.padding(12.dp), color = MaterialTheme.colorScheme.onErrorContainer)
                 }
             }
 
-            Spacer(modifier = Modifier.height(24dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
             // Conversion list results
             Text("Conversion Outputs", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             val context = LocalContext.current
             listOf(
@@ -320,9 +320,9 @@ fun DevCalculatorScreen(onBackClick: () -> Unit) {
                 "OCT" to outOct,
                 "BIN" to outBin
             ).forEach { (baseName, valStr) ->
-                Card(modifier = Modifier.fillMaxWidth().padding(vertical = 6dp)) {
+                Card(modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)) {
                     Row(
-                        modifier = Modifier.padding(16dp).fillMaxWidth(),
+                        modifier = Modifier.padding(16.dp).fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -387,15 +387,15 @@ fun MarkdownPreviewScreen(onBackClick: () -> Unit) {
                     placeholder = { Text("Enter Markdown text...") },
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(16dp),
-                    shape = RoundedCornerShape(12dp)
+                        .padding(16.dp),
+                    shape = RoundedCornerShape(12.dp)
                 )
             } else {
                 CustomMarkdown(
                     markdownText = input,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(16dp)
+                        .padding(16.dp)
                 )
             }
         }
@@ -456,7 +456,7 @@ fun QrGeneratorTab() {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(16dp),
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         ScrollableTabRow(
@@ -464,7 +464,7 @@ fun QrGeneratorTab() {
             edgePadding = 0.dp,
             divider = {},
             containerColor = Color.Transparent,
-            modifier = Modifier.fillMaxWidth().padding(bottom = 12dp)
+            modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)
         ) {
             types.forEach { t ->
                 Tab(selected = qrType == t, onClick = { qrType = t }, text = { Text(t) })
@@ -476,28 +476,28 @@ fun QrGeneratorTab() {
             onValueChange = { qrInput = it },
             label = { Text("Enter QR Value") },
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12dp)
+            shape = RoundedCornerShape(12.dp)
         )
 
-        Spacer(modifier = Modifier.height(24dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         qrBitmap?.let { bmp ->
             Card(
                 modifier = Modifier
-                    .size(240dp)
-                    .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12dp)),
+                    .size(240.dp)
+                    .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12.dp)),
                 colors = CardDefaults.cardColors(containerColor = Color.White)
             ) {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     Image(
                         bitmap = bmp.asImageBitmap(),
                         contentDescription = "QR Code Output",
-                        modifier = Modifier.size(210dp)
+                        modifier = Modifier.size(210.dp)
                     )
                 }
             }
         } ?: Box(
-            modifier = Modifier.size(240dp).clip(RoundedCornerShape(12dp)).background(MaterialTheme.colorScheme.surfaceVariant),
+            modifier = Modifier.size(240.dp).clip(RoundedCornerShape(12.dp)).background(MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center
         ) {
             Text("Enter input to generate")
@@ -530,10 +530,10 @@ fun QrScannerTab() {
     } else {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Icon(Icons.Default.Camera, contentDescription = null, modifier = Modifier.size(48dp))
-                Spacer(modifier = Modifier.height(12dp))
+                Icon(Icons.Default.Camera, contentDescription = null, modifier = Modifier.size(48.dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Text("Camera permission is required to scan QR codes.")
-                Spacer(modifier = Modifier.height(8dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = { launcher.launch(Manifest.permission.CAMERA) }) {
                     Text("Grant Permission")
                 }
@@ -616,13 +616,13 @@ fun CameraScannerView() {
                 .fillMaxWidth()
                 .weight(1f)
                 .background(MaterialTheme.colorScheme.surface)
-                .padding(16dp),
+                .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             if (scanResult.isNotEmpty()) {
                 Text("Scan Result:", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                Spacer(modifier = Modifier.height(8dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 CodeViewer(code = scanResult, title = "Scanned Text")
             } else {
                 Text("Align QR Code inside camera view to scan...", style = MaterialTheme.typography.bodyMedium)

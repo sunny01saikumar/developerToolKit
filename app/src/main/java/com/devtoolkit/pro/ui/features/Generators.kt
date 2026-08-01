@@ -86,12 +86,12 @@ fun UuidGeneratorScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 16dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
             ) {
-                Column(modifier = Modifier.padding(16dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = "Batch Size: ${quantity.toInt()}",
                         style = MaterialTheme.typography.titleMedium,
@@ -104,7 +104,7 @@ fun UuidGeneratorScreen(onBackClick: () -> Unit) {
                         steps = 49
                     )
 
-                    Spacer(modifier = Modifier.height(8dp))
+                    Spacer(modifier = Modifier.height(8.dp))
 
                     Button(
                         onClick = {
@@ -113,13 +113,13 @@ fun UuidGeneratorScreen(onBackClick: () -> Unit) {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Icon(Icons.Default.Refresh, contentDescription = null)
-                        Spacer(modifier = Modifier.width(8dp))
+                        Spacer(modifier = Modifier.width(8.dp))
                         Text("Regenerate UUIDs")
                     }
                 }
             }
 
-            Spacer(modifier = Modifier.height(8dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             CodeViewer(code = output, title = "Generated UUIDs (V4)")
         }
@@ -171,12 +171,12 @@ fun PasswordGeneratorScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 20dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
             ) {
-                Column(modifier = Modifier.padding(16dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = "Password Length: ${length.toInt()}",
                         style = MaterialTheme.typography.titleMedium,
@@ -189,13 +189,13 @@ fun PasswordGeneratorScreen(onBackClick: () -> Unit) {
                         steps = 58
                     )
 
-                    Spacer(modifier = Modifier.height(12dp))
+                    Spacer(modifier = Modifier.height(12.dp))
 
                     Text(
                         text = "Include Characters",
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(bottom = 8dp)
+                        modifier = Modifier.padding(bottom = 8.dp)
                     )
 
                     // Options Grid/List
@@ -225,14 +225,14 @@ fun PasswordGeneratorScreen(onBackClick: () -> Unit) {
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(16dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     Button(
                         onClick = { refreshPassword() },
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Icon(Icons.Default.Casino, contentDescription = null)
-                        Spacer(modifier = Modifier.width(8dp))
+                        Spacer(modifier = Modifier.width(8.dp))
                         Text("Generate Password")
                     }
                 }

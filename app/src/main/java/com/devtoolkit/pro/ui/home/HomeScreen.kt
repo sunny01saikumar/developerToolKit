@@ -55,16 +55,16 @@ fun HomeScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background),
-            contentPadding = PaddingValues(horizontal = 16dp, vertical = 8dp),
-            horizontalArrangement = Arrangement.spacedBy(12dp),
-            verticalArrangement = Arrangement.spacedBy(12dp)
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             // Header Section
             item(span = { GridItemSpan(2) }) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 16dp, bottom = 8dp)
+                        .padding(top = 16.dp, bottom = 8.dp)
                 ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -103,7 +103,7 @@ fun HomeScreen(
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(16dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     SearchBar(
                         query = searchQuery,
@@ -116,18 +116,18 @@ fun HomeScreen(
             // Bookmarks / Favorites Carousel (only show when query is empty and bookmarks present)
             if (searchQuery.isEmpty() && bookmarkedTools.isNotEmpty()) {
                 item(span = { GridItemSpan(2) }) {
-                    Column(modifier = Modifier.padding(vertical = 4dp)) {
+                    Column(modifier = Modifier.padding(vertical = 4.dp)) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.padding(bottom = 8dp)
+                            modifier = Modifier.padding(bottom = 8.dp)
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Bookmark,
                                 contentDescription = null,
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.size(18dp)
+                                modifier = Modifier.size(18.dp)
                             )
-                            Spacer(modifier = Modifier.width(6dp))
+                            Spacer(modifier = Modifier.width(6.dp))
                             Text(
                                 text = "Favorites",
                                 style = MaterialTheme.typography.titleMedium,
@@ -137,26 +137,26 @@ fun HomeScreen(
                         }
 
                         LazyRow(
-                            horizontalArrangement = Arrangement.spacedBy(10dp),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             items(bookmarkedTools) { tool ->
                                 val gradientColors = tool.gradients.map { Color(android.graphics.Color.parseColor(it)) }
                                 Box(
                                     modifier = Modifier
-                                        .width(140dp)
-                                        .height(76dp)
-                                        .clip(RoundedCornerShape(12dp))
+                                        .width(140.dp)
+                                        .height(76.dp)
+                                        .clip(RoundedCornerShape(12.dp))
                                         .background(Brush.linearGradient(gradientColors))
                                         .clickable { onToolClick(tool.route, tool.id) }
-                                        .padding(10dp)
+                                        .padding(10.dp)
                                 ) {
                                     Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
                                         Icon(
                                             imageVector = getIconByName(tool.iconName),
                                             contentDescription = null,
                                             tint = Color.White,
-                                            modifier = Modifier.size(20dp)
+                                            modifier = Modifier.size(20.dp)
                                         )
                                         Text(
                                             text = tool.title,
@@ -176,7 +176,7 @@ fun HomeScreen(
             // Recent/History Section (only show when query is empty and history present)
             if (searchQuery.isEmpty() && recentTools.isNotEmpty()) {
                 item(span = { GridItemSpan(2) }) {
-                    Column(modifier = Modifier.padding(vertical = 4dp)) {
+                    Column(modifier = Modifier.padding(vertical = 4.dp)) {
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -187,9 +187,9 @@ fun HomeScreen(
                                     imageVector = Icons.Default.History,
                                     contentDescription = null,
                                     tint = MaterialTheme.colorScheme.secondary,
-                                    modifier = Modifier.size(18dp)
+                                    modifier = Modifier.size(18.dp)
                                 )
-                                Spacer(modifier = Modifier.width(6dp))
+                                Spacer(modifier = Modifier.width(6.dp))
                                 Text(
                                     text = "Recents",
                                     style = MaterialTheme.typography.titleMedium,
@@ -206,30 +206,30 @@ fun HomeScreen(
                         }
 
                         LazyRow(
-                            horizontalArrangement = Arrangement.spacedBy(10dp),
-                            modifier = Modifier.fillMaxWidth().padding(top = 8dp)
+                            horizontalArrangement = Arrangement.spacedBy(10.dp),
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                         ) {
                             items(recentTools) { (tool, _) ->
                                 Card(
                                     modifier = Modifier
-                                        .width(130dp)
+                                        .width(130.dp)
                                         .clickable { onToolClick(tool.route, tool.id) },
-                                    shape = RoundedCornerShape(10dp),
+                                    shape = RoundedCornerShape(10.dp),
                                     colors = CardDefaults.cardColors(
                                         containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
                                     )
                                 ) {
                                     Row(
-                                        modifier = Modifier.padding(10dp),
+                                        modifier = Modifier.padding(10.dp),
                                         verticalAlignment = Alignment.CenterVertically
                                     ) {
                                         Icon(
                                             imageVector = getIconByName(tool.iconName),
                                             contentDescription = null,
                                             tint = MaterialTheme.colorScheme.primary,
-                                            modifier = Modifier.size(18dp)
+                                            modifier = Modifier.size(18.dp)
                                         )
-                                        Spacer(modifier = Modifier.width(8dp))
+                                        Spacer(modifier = Modifier.width(8.dp))
                                         Text(
                                             text = tool.title,
                                             style = MaterialTheme.typography.labelMedium,
@@ -252,7 +252,7 @@ fun HomeScreen(
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onBackground,
-                    modifier = Modifier.padding(vertical = 4dp)
+                    modifier = Modifier.padding(vertical = 4.dp)
                 )
             }
 
@@ -262,7 +262,7 @@ fun HomeScreen(
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(150dp),
+                            .height(150.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
@@ -284,7 +284,7 @@ fun HomeScreen(
 
             // Bottom Spacing
             item(span = { GridItemSpan(2) }) {
-                Spacer(modifier = Modifier.height(24dp))
+                Spacer(modifier = Modifier.height(24.dp))
             }
         }
     }

@@ -81,7 +81,7 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(scrollState)
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             // --- Section 1: Color Picker & Converter ---
             Text(
@@ -89,24 +89,24 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 12dp)
+                modifier = Modifier.padding(bottom = 12.dp)
             )
 
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 24dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp)
             ) {
-                Column(modifier = Modifier.padding(16dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     // Preview box
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(100dp)
-                            .clip(RoundedCornerShape(12dp))
+                            .height(100.dp)
+                            .clip(RoundedCornerShape(12.dp))
                             .background(currentColor)
-                            .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12dp))
+                            .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12.dp))
                     )
 
-                    Spacer(modifier = Modifier.height(16dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     // RGB Sliders
                     SliderRow(label = "Red: ${red.toInt()}", value = red, onValueChange = { red = it }, max = 255f)
@@ -114,7 +114,7 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
                     SliderRow(label = "Blue: ${blue.toInt()}", value = blue, onValueChange = { blue = it }, max = 255f)
                     SliderRow(label = "Alpha: ${alpha.toInt()}", value = alpha, onValueChange = { alpha = it }, max = 255f)
 
-                    Spacer(modifier = Modifier.height(16dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     // Values grid
                     listOf(
@@ -123,23 +123,23 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
                         "ARGB" to argbString
                     ).forEach { (label, value) ->
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(vertical = 4dp),
+                            modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(label, fontWeight = FontWeight.Bold)
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(value, style = MaterialTheme.typography.bodyMedium)
-                                Spacer(modifier = Modifier.width(8dp))
+                                Spacer(modifier = Modifier.width(8.dp))
                                 IconButton(
                                     onClick = {
                                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                                         clipboard.setPrimaryClip(ClipData.newPlainText("color", value))
                                         Toast.makeText(context, "Copied: $value", Toast.LENGTH_SHORT).show()
                                     },
-                                    modifier = Modifier.size(24dp)
+                                    modifier = Modifier.size(24.dp)
                                 ) {
-                                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16dp))
+                                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", modifier = Modifier.size(16.dp))
                                 }
                             }
                         }
@@ -153,31 +153,31 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 12dp)
+                modifier = Modifier.padding(bottom = 12.dp)
             )
 
             Card(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 16dp)
+                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
             ) {
-                Column(modifier = Modifier.padding(16dp)) {
+                Column(modifier = Modifier.padding(16.dp)) {
                     // Preview
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(100dp)
-                            .clip(RoundedCornerShape(12dp))
+                            .height(100.dp)
+                            .clip(RoundedCornerShape(12.dp))
                             .background(Brush.linearGradient(listOf(gColor1, gColor2)))
-                            .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12dp))
+                            .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12.dp))
                     )
 
-                    Spacer(modifier = Modifier.height(16dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     Text("Color 1 (Left)", fontWeight = FontWeight.Bold)
                     SliderRow(label = "R: ${gRed1.toInt()}", value = gRed1, onValueChange = { gRed1 = it }, max = 255f)
                     SliderRow(label = "G: ${gGreen1.toInt()}", value = gGreen1, onValueChange = { gGreen1 = it }, max = 255f)
                     SliderRow(label = "B: ${gBlue1.toInt()}", value = gBlue1, onValueChange = { gBlue1 = it }, max = 255f)
 
-                    Spacer(modifier = Modifier.height(12dp))
+                    Spacer(modifier = Modifier.height(12.dp))
 
                     Text("Color 2 (Right)", fontWeight = FontWeight.Bold)
                     SliderRow(label = "R: ${gRed2.toInt()}", value = gRed2, onValueChange = { gRed2 = it }, max = 255f)
@@ -187,7 +187,7 @@ fun ColorToolsScreen(onBackClick: () -> Unit) {
             }
 
             CodeViewer(code = cssGradient, title = "CSS Code")
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
             CodeViewer(code = composeGradient, title = "Jetpack Compose Code")
         }
     }
@@ -204,7 +204,7 @@ fun SliderRow(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = label, modifier = Modifier.width(90dp), style = MaterialTheme.typography.bodyMedium)
+        Text(text = label, modifier = Modifier.width(90.dp), style = MaterialTheme.typography.bodyMedium)
         Slider(
             value = value,
             onValueChange = onValueChange,

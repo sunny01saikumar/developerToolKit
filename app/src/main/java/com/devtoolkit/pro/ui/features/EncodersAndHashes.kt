@@ -58,7 +58,7 @@ fun Base64Screen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -66,15 +66,15 @@ fun Base64Screen(onBackClick: () -> Unit) {
                 label = { Text("Input Text") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(160dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(160.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10dp)
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 Button(
                     onClick = {
@@ -90,7 +90,7 @@ fun Base64Screen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.Lock, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text("Encode")
                 }
 
@@ -107,12 +107,12 @@ fun Base64Screen(onBackClick: () -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
                 ) {
                     Icon(Icons.Default.LockOpen, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text("Decode")
                 }
             }
 
-            Spacer(modifier = Modifier.height(20dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             CodeViewer(code = output, title = "Output Results")
         }
@@ -144,7 +144,7 @@ fun UrlScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -152,15 +152,15 @@ fun UrlScreen(onBackClick: () -> Unit) {
                 label = { Text("Input URL/String") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(160dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(160.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10dp)
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 Button(
                     onClick = {
@@ -173,7 +173,7 @@ fun UrlScreen(onBackClick: () -> Unit) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Default.Lock, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text("Encode")
                 }
 
@@ -189,12 +189,12 @@ fun UrlScreen(onBackClick: () -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
                 ) {
                     Icon(Icons.Default.LockOpen, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text("Decode")
                 }
             }
 
-            Spacer(modifier = Modifier.height(20dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             CodeViewer(code = output, title = "Output Results")
         }
@@ -234,7 +234,7 @@ fun HashGeneratorScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -242,23 +242,23 @@ fun HashGeneratorScreen(onBackClick: () -> Unit) {
                 label = { Text("Enter Input Text") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(140dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(140.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(16dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Select Algorithm",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(bottom = 8dp)
+                modifier = Modifier.padding(bottom = 8.dp)
             )
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 algorithms.forEach { algo ->
                     val isSelected = selectedAlgo == algo
@@ -271,7 +271,7 @@ fun HashGeneratorScreen(onBackClick: () -> Unit) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(24dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
             CodeViewer(code = output, title = "$selectedAlgo Hash Output")
         }

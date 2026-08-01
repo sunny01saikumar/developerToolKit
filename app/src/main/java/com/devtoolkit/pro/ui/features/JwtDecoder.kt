@@ -97,7 +97,7 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
                 .padding(paddingValues)
                 .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(16dp)
+                .padding(16.dp)
         ) {
             OutlinedTextField(
                 value = input,
@@ -105,11 +105,11 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
                 label = { Text("Enter JWT Token") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(130dp),
-                shape = RoundedCornerShape(12dp)
+                    .height(130.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(12dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             Button(
                 onClick = {
@@ -128,20 +128,20 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
             }
 
             if (error.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(16dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Card(
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)
                 ) {
-                    Row(modifier = Modifier.padding(16dp), verticalAlignment = Alignment.CenterVertically) {
+                    Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
                         Icon(Icons.Default.Warning, contentDescription = null, tint = MaterialTheme.colorScheme.error)
-                        Spacer(modifier = Modifier.width(12dp))
+                        Spacer(modifier = Modifier.width(12.dp))
                         Text(text = error, color = MaterialTheme.colorScheme.onErrorContainer)
                     }
                 }
             }
 
             result?.let { jwt ->
-                Spacer(modifier = Modifier.height(24dp))
+                Spacer(modifier = Modifier.height(24.dp))
 
                 // Metadata Section
                 Text(
@@ -149,22 +149,22 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(bottom = 8dp)
+                    modifier = Modifier.padding(bottom = 8.dp)
                 )
 
                 Card(
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 16dp)
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
                 ) {
-                    Column(modifier = Modifier.padding(16dp)) {
+                    Column(modifier = Modifier.padding(16.dp)) {
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(bottom = 8dp),
+                            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text("Algorithm:", fontWeight = FontWeight.Bold)
                             Text(jwt.signatureAlgorithm, color = MaterialTheme.colorScheme.secondary)
                         }
                         Divider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
-                        Spacer(modifier = Modifier.height(8dp))
+                        Spacer(modifier = Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween
@@ -184,11 +184,11 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(bottom = 8dp)
+                    modifier = Modifier.padding(bottom = 8.dp)
                 )
                 CodeViewer(code = jwt.headerJson, title = "Header")
 
-                Spacer(modifier = Modifier.height(16dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
                 // Payload Decoded
                 Text(
@@ -196,24 +196,24 @@ fun JwtDecoderScreen(onBackClick: () -> Unit) {
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(bottom = 8dp)
+                    modifier = Modifier.padding(bottom = 8.dp)
                 )
                 CodeViewer(code = jwt.payloadJson, title = "Payload")
 
-                Spacer(modifier = Modifier.height(16dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
                 // Signature Note (Security & Offline explanation)
                 Card(
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
                 ) {
-                    Column(modifier = Modifier.padding(16dp)) {
+                    Column(modifier = Modifier.padding(16.dp)) {
                         Text(
                             text = "Offline Signature Notice",
                             fontWeight = FontWeight.Bold,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
-                        Spacer(modifier = Modifier.height(4dp))
+                        Spacer(modifier = Modifier.height(4.dp))
                         Text(
                             text = "This application operates 100% offline. Cryptographic signature verification is not performed. Ensure secret keys are handled only in secure backend systems.",
                             style = MaterialTheme.typography.bodySmall,

@@ -50,7 +50,7 @@ fun ToolCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .height(130dp)
+            .height(130.dp)
             .graphicsLayer(scaleX = scale, scaleY = scale)
             .pointerInput(Unit) {
                 detectTapGestures(
@@ -65,8 +65,8 @@ fun ToolCard(
             .semantics {
                 contentDescription = "${tool.title}: ${tool.description}"
             },
-        shape = RoundedCornerShape(16dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4dp)
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Box(
             modifier = Modifier
@@ -76,7 +76,7 @@ fun ToolCard(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(12dp),
+                    .padding(12.dp),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
                 Row(
@@ -86,8 +86,8 @@ fun ToolCard(
                 ) {
                     Box(
                         modifier = Modifier
-                            .size(40dp)
-                            .clip(RoundedCornerShape(10dp))
+                            .size(40.dp)
+                            .clip(RoundedCornerShape(10.dp))
                             .background(Color.White.copy(alpha = 0.2f)),
                         contentAlignment = Alignment.Center
                     ) {
@@ -95,13 +95,13 @@ fun ToolCard(
                             imageVector = getIconByName(tool.iconName),
                             contentDescription = null,
                             tint = Color.White,
-                            modifier = Modifier.size(24dp)
+                            modifier = Modifier.size(24.dp)
                         )
                     }
 
                     IconButton(
                         onClick = onBookmarkClick,
-                        modifier = Modifier.size(24dp)
+                        modifier = Modifier.size(24.dp)
                     ) {
                         Icon(
                             imageVector = if (isBookmarked) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
@@ -154,7 +154,7 @@ fun SearchBar(
         },
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 8dp),
+            .padding(vertical = 8.dp),
         shape = RoundedCornerShape(28.dp),
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = MaterialTheme.colorScheme.primary,
@@ -179,16 +179,16 @@ fun CodeViewer(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(MaterialTheme.colorScheme.surfaceVariant)
-            .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), RoundedCornerShape(12dp))
+            .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
     ) {
         // Toolbar
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f))
-                .padding(horizontal = 12dp, vertical = 8dp),
+                .padding(horizontal = 12.dp, vertical = 8.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -208,17 +208,17 @@ fun CodeViewer(
                         Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT).show()
                         onCopy?.invoke()
                     },
-                    modifier = Modifier.size(32dp)
+                    modifier = Modifier.size(32.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Default.ContentCopy,
                         contentDescription = "Copy code",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.size(18dp)
+                        modifier = Modifier.size(18.dp)
                     )
                 }
 
-                Spacer(modifier = Modifier.width(8dp))
+                Spacer(modifier = Modifier.width(8.dp))
 
                 IconButton(
                     onClick = {
@@ -228,13 +228,13 @@ fun CodeViewer(
                         }
                         context.startActivity(Intent.createChooser(intent, "Share Output"))
                     },
-                    modifier = Modifier.size(32dp)
+                    modifier = Modifier.size(32.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Default.Share,
                         contentDescription = "Share code",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.size(18dp)
+                        modifier = Modifier.size(18.dp)
                     )
                 }
             }
@@ -246,9 +246,9 @@ fun CodeViewer(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .heightIn(min = 100dp, max = 300dp)
+                .heightIn(min = 100.dp, max = 300.dp)
                 .verticalScroll(scrollState)
-                .padding(12dp)
+                .padding(12.dp)
         ) {
             Text(
                 text = code.ifEmpty { "No output available..." },
@@ -282,7 +282,7 @@ fun CustomMarkdown(
                 if (inCodeBlock) {
                     // Output code block
                     CodeViewer(code = codeBlockContent.toString(), title = "Code Snippet")
-                    Spacer(modifier = Modifier.height(8dp))
+                    Spacer(modifier = Modifier.height(8.dp))
                     codeBlockContent.clear()
                     inCodeBlock = false
                 } else {
@@ -303,7 +303,7 @@ fun CustomMarkdown(
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(vertical = 8dp)
+                        modifier = Modifier.padding(vertical = 8.dp)
                     )
                 }
                 trimmedLine.startsWith("## ") -> {
@@ -312,7 +312,7 @@ fun CustomMarkdown(
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.padding(vertical = 6dp)
+                        modifier = Modifier.padding(vertical = 6.dp)
                     )
                 }
                 trimmedLine.startsWith("### ") -> {
@@ -321,12 +321,12 @@ fun CustomMarkdown(
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.padding(vertical = 4dp)
+                        modifier = Modifier.padding(vertical = 4.dp)
                     )
                 }
                 trimmedLine.startsWith("- ") || trimmedLine.startsWith("* ") -> {
                     Row(
-                        modifier = Modifier.padding(start = 8dp, vertical = 2dp),
+                        modifier = Modifier.padding(start = 8.dp, vertical = 2.dp),
                         verticalAlignment = Alignment.Top
                     ) {
                         Text(
@@ -334,7 +334,7 @@ fun CustomMarkdown(
                             style = MaterialTheme.typography.bodyLarge,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.padding(end = 8dp)
+                            modifier = Modifier.padding(end = 8.dp)
                         )
                         Text(
                             text = parseBoldText(trimmedLine.substring(2)),
@@ -347,15 +347,15 @@ fun CustomMarkdown(
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 6dp, horizontal = 4dp)
-                            .clip(RoundedCornerShape(topEnd = 8dp, bottomEnd = 8dp))
+                            .padding(vertical = 6.dp, horizontal = 4.dp)
+                            .clip(RoundedCornerShape(topEnd = 8.dp, bottomEnd = 8.dp))
                             .background(MaterialTheme.colorScheme.surfaceVariant)
                             .border(
                                 width = 3.dp,
                                 color = MaterialTheme.colorScheme.primary,
-                                shape = RoundedCornerShape(topStart = 4dp, bottomStart = 4dp)
+                                shape = RoundedCornerShape(topStart = 4.dp, bottomStart = 4.dp)
                             )
-                            .padding(12dp)
+                            .padding(12.dp)
                     ) {
                         Text(
                             text = parseBoldText(trimmedLine.substring(2)),
@@ -366,14 +366,14 @@ fun CustomMarkdown(
                     }
                 }
                 trimmedLine.isEmpty() -> {
-                    Spacer(modifier = Modifier.height(6dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                 }
                 else -> {
                     Text(
                         text = parseBoldText(line),
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.padding(vertical = 4dp)
+                        modifier = Modifier.padding(vertical = 4.dp)
                     )
                 }
             }
