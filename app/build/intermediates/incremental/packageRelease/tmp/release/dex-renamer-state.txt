@@ -1,0 +1,4 @@
+#Sat Aug 01 16:44:12 IST 2026
+base.0=C\:\\Users\\saiku\\Desktop\\developerToolKit\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

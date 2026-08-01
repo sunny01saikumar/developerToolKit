@@ -404,20 +404,20 @@ public final class DaggerDevToolkitApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
+      static String com_devtoolkit_pro_ui_home_HomeViewModel = "com.devtoolkit.pro.ui.home.HomeViewModel";
+
       static String com_devtoolkit_pro_ui_settings_SettingsViewModel = "com.devtoolkit.pro.ui.settings.SettingsViewModel";
 
       static String com_devtoolkit_pro_ui_features_NotesViewModel = "com.devtoolkit.pro.ui.features.NotesViewModel";
 
-      static String com_devtoolkit_pro_ui_home_HomeViewModel = "com.devtoolkit.pro.ui.home.HomeViewModel";
+      @KeepFieldType
+      HomeViewModel com_devtoolkit_pro_ui_home_HomeViewModel2;
 
       @KeepFieldType
       SettingsViewModel com_devtoolkit_pro_ui_settings_SettingsViewModel2;
 
       @KeepFieldType
       NotesViewModel com_devtoolkit_pro_ui_features_NotesViewModel2;
-
-      @KeepFieldType
-      HomeViewModel com_devtoolkit_pro_ui_home_HomeViewModel2;
     }
   }
 
@@ -466,18 +466,18 @@ public final class DaggerDevToolkitApp_HiltComponents_SingletonC {
     private static final class LazyClassKeyProvider {
       static String com_devtoolkit_pro_ui_home_HomeViewModel = "com.devtoolkit.pro.ui.home.HomeViewModel";
 
-      static String com_devtoolkit_pro_ui_features_NotesViewModel = "com.devtoolkit.pro.ui.features.NotesViewModel";
-
       static String com_devtoolkit_pro_ui_settings_SettingsViewModel = "com.devtoolkit.pro.ui.settings.SettingsViewModel";
+
+      static String com_devtoolkit_pro_ui_features_NotesViewModel = "com.devtoolkit.pro.ui.features.NotesViewModel";
 
       @KeepFieldType
       HomeViewModel com_devtoolkit_pro_ui_home_HomeViewModel2;
 
       @KeepFieldType
-      NotesViewModel com_devtoolkit_pro_ui_features_NotesViewModel2;
+      SettingsViewModel com_devtoolkit_pro_ui_settings_SettingsViewModel2;
 
       @KeepFieldType
-      SettingsViewModel com_devtoolkit_pro_ui_settings_SettingsViewModel2;
+      NotesViewModel com_devtoolkit_pro_ui_features_NotesViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
