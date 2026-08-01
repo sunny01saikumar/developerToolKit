@@ -80,7 +80,7 @@ dependencies {
     implementation(libs.datastore.preferences)
 
     // Serialization
-    implementation(libs.kotlinx.serialization-json)
+    implementation(libs.kotlinx.serialization.json)
 
     // AdMob
     implementation(libs.play.services.ads)
