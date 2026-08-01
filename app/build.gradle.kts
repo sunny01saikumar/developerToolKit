@@ -54,9 +54,7 @@ android {
 }
 
 configurations.all {
-    resolutionStrategy {
-        force("com.google.guava:listenablefuture:1.0")
-    }
+    exclude(group = "com.google.guava", module = "listenablefuture")
 }
 
 dependencies {
@@ -93,7 +91,7 @@ dependencies {
 
     // QR & Barcode Scanning
     implementation(libs.mlkit.barcode.scanning)
-    implementation("com.google.guava:listenablefuture:1.0")
+    implementation("com.google.guava:guava:31.1-android")
     implementation(libs.camera.core)
     implementation(libs.camera.camera2)
     implementation(libs.camera.lifecycle)
