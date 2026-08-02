@@ -25,7 +25,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 object AdManager {
     // Standard AdMob Sample Interstitial Unit ID
-    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
+    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-1653508375826617/8035156238"
     private var mInterstitialAd: InterstitialAd? = null
     private var isLoading = false
 
@@ -82,7 +82,7 @@ object AdManager {
 fun AdBanner(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     // Standard AdMob Sample Banner Unit ID
-    val bannerAdUnitId = "ca-app-pub-3940256099942544/6300978111"
+    val bannerAdUnitId = "ca-app-pub-1653508375826617/5457094353"
 
     AndroidView(
         modifier = modifier
